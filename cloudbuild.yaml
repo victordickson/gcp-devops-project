@@ -13,6 +13,6 @@ steps:
   args:
   - run
   - --filename=gke.yaml
-  - --image=europe-west1-docker.pkg.dev/$PROJECT_ID/gcpdevops
+  - --image=europe-west1-docker.pkg.dev/$PROJECT_ID/gcpdevops:latest
   - --cluster=gcp-devops-project
   - --namespace=gcp-devops-prod
