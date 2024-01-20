@@ -2,11 +2,11 @@ steps:
   # build the container image
 - name: "gcr.io/cloud-builders/docker"
   id: Build
-  args: ["build", "-t", "europe-west1-docker.pkg.dev/$PROJECT_ID/gcpdevops", "."]
+  args: ["build", "-t", "europe-west1-docker.pkg.dev/$PROJECT_ID/gcpdevops/gcpdevops-image", "."]
   # push container image
 - name: "gcr.io/cloud-builders/docker"
   id: Push
-  args: ["push", "europe-west1-docker.pkg.dev/vic-personal/gcpdevops:latest"]
+  args: ["push", "europe-west1-docker.pkg.dev/$PROJECT_ID/gcpdevops/gcpdevops-image:latest"]
   # deploy container image to GKE
 - name: "gcr.io/cloud-builders/gke-deploy"
   id: Deploy
